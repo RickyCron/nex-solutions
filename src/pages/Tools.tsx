@@ -7,13 +7,13 @@ const tools = [
     name: "Make.com",
     logo: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_768,h_159/https://apps4u.com/wp-content/uploads/2024/05/Make-Logo-RGB@2x-1.webp",
     description: "Automation platform",
-    className: "brightness-75 grayscale-[75%] group-hover:brightness-100 group-hover:grayscale-0"
+    className: "grayscale group-hover:grayscale-0"
   },
   { 
     name: "Voiceflow",
-    logo: "https://uploads-ssl.webflow.com/5e0a5d93ae5a9a398b37672c/5e4bbcee60bcfc24d26a98bb_Logo1k_Normal.png",
+    logo: "https://cdn.prod.website-files.com/6734a831ad77c756622d1187/67ad1e1c184700d8392c8cd6_52.png",
     description: "Conversation design",
-    className: "brightness-75 grayscale-[75%] group-hover:brightness-100 group-hover:grayscale-0"
+    className: "grayscale group-hover:grayscale-0"
   },
   { 
     name: "Google Docs",
@@ -93,7 +93,7 @@ export default function Tools() {
                       <img
                         src={tool.logo}
                         alt={tool.name}
-                        className={`w-full h-full object-contain transition-all duration-300 ${tool.name !== "Make.com" && tool.name !== "Voiceflow" ? "grayscale group-hover:grayscale-0" : ""} ${tool.className}`}
+                        className={`w-full h-full object-contain transition-all duration-300 grayscale group-hover:grayscale-0 ${tool.className}`}
                       />
                     )}
                   </div>
