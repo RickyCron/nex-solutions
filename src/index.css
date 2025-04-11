@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-secondary text-dark;
+  }
+
+  h1, .h1 {
+    @apply font-spaceGrotesk font-bold tracking-tight leading-[1.2] text-light;
+    letter-spacing: -0.01em;
+  }
+
+  h2, h3, .h2, .h3 {
+    @apply font-rajdhani font-semibold leading-relaxed text-light;
+  }
+
+  .brand-text {
+    @apply font-orbitron font-medium tracking-wider leading-tight;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-text {
+    @apply font-rajdhani font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-light px-8 py-4 rounded-full font-rajdhani font-semibold 
+           transition-all duration-300 hover:bg-accent-hover hover:scale-105 
+           hover:shadow-lg hover:shadow-accent/20;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary px-8 py-4 rounded-full font-rajdhani 
+           font-semibold transition-all duration-300 hover:bg-white/90
+           hover:scale-105 hover:shadow-lg;
+  }
+
+  .section-light {
+    @apply bg-secondary py-36;
+  }
+
+  .section-dark {
+    @apply bg-primary py-36;
+  }
+
+  .nav-link {
+    @apply font-rajdhani font-semibold text-light hover:text-accent transition-colors 
+           duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 
+           after:h-0.5 after:bg-accent hover:after:w-full after:transition-all;
+  }
+}
+
+/* Electrical lines effect */
+.electrical-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.electrical-line {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #6EC6D9,
+    #CC4A4A,
+    #6EC6D9,
+    transparent
+  );
+  animation: electricalFlow 4s linear infinite;
+  filter: blur(1px);
+}
+
+@keyframes electricalFlow {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Tool card effects */
+.tool-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(110, 198, 217, 0.2),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tool-card:hover::before {
+  opacity: 1;
+}
+
+.tool-card:hover {
+  box-shadow: 
+    0 0 20px rgba(110, 198, 217, 0.3),
+    0 0 40px rgba(110, 198, 217, 0.1);
+}
+
+.tool-card img {
+  transition: filter 0.3s ease;
+}
+
+.tool-card:hover img {
+  filter: brightness(1.2);
+}
